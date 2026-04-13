@@ -205,7 +205,7 @@ fun ResultsScreen() {
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Candidate 2
+                    // Candidate
                     CandidateResultItem(
                         name = "Marcus Thorne",
                         party = "SECURITY & STABILITY PARTY",
