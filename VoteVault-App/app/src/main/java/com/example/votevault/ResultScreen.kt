@@ -203,6 +203,10 @@ fun ResultsScreen() {
                         percentageColor = primaryColor
                     )
 
+
+
+
+
                     Spacer(modifier = Modifier.height(24.dp))
 
                     // Candidate
