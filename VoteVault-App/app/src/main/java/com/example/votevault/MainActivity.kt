@@ -1,5 +1,6 @@
 package com.example.votevault
 
+import HomeScreen
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -19,19 +20,9 @@ class MainActivity : ComponentActivity() {
             VoteVaultTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-                    // Call your new UI here and apply the padding!
-                    LoginScreen(
-                        modifier = Modifier.padding(innerPadding),
-                        onContinueClicked = { sovereignId ->
-                            // This runs when they type an ID and hit Continue
-                            Log.d("VoteVault", "ID Entered: $sovereignId")
-                        },
-                        onBiometricClicked = {
-                            // This runs when they tap the Fingerprint button
-                            Log.d("VoteVault", "Biometric button tapped!")
 
-                        }
-                    )
+
+                    AppNavigation()
 
                 }
             }

@@ -1,4 +1,4 @@
-package com.example.votevault // Update with your actual package name
+package com.example.votevault
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -23,11 +23,11 @@ import androidx.compose.ui.unit.sp
 fun LoginScreen(
     modifier: Modifier= Modifier,
     onContinueClicked: (String) -> Unit,
-    onBiometricClicked: () -> Unit // This is where our CryptoManager will hook in!
+    onBiometricClicked: () -> Unit
 ) {
     var sovereignId by remember { mutableStateOf("") }
 
-    // Using a deep blue/grey color palette to match the "Vault" aesthetic
+
     val primaryColor = Color(0xFF001C40)
     val surfaceColor = Color(0xFFF8F9FA)
     val surfaceVariant = Color(0xFFE1E3E4)
@@ -43,10 +43,9 @@ fun LoginScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(horizontal = 24.dp)
-                .systemBarsPadding(), // Ensures it doesn't overlap the status bar
+                .systemBarsPadding(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // --- TOP NAVIGATION ---
             Spacer(modifier = Modifier.height(32.dp))
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -69,7 +68,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            // --- HERO SECTION ---
             Column(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.Start
@@ -92,7 +90,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            // --- INPUT FIELD ---
             OutlinedTextField(
                 value = sovereignId,
                 onValueChange = { sovereignId = it },
@@ -117,7 +114,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // --- PRIMARY ACTION BUTTON ---
             Button(
                 onClick = { onContinueClicked(sovereignId) },
                 modifier = Modifier
@@ -131,7 +127,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // --- DIVIDER ---
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()
@@ -150,7 +145,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // --- BIOMETRICS BUTTON ---
             Surface(
                 onClick = onBiometricClicked,
                 shape = RoundedCornerShape(16.dp),
@@ -166,7 +160,7 @@ fun LoginScreen(
                         modifier = Modifier
                             .size(48.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFFD4E3FE)), // Light blue background
+                            .background(Color(0xFFD4E3FE)),
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -186,7 +180,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.weight(1f))
 
-            // --- SECURITY SEAL (FOOTER) ---
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(bottom = 32.dp)
